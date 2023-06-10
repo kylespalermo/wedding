@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+@font-face {
+    font-family: "trickster";
+    src: url("Trickster-Regular.woff");
+}
+
+* {
+    margin: 0;
+    flex-basis: 100%;
+}
+
+a {
+    color: #ffdddd;
+}
+
+body {
+    background: #FF7878;
+    color: #FFDDDD;
+    text-align: center;
+    max-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    overflow: hidden;
+    gap: 120px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+h1 {
+    font-family: "trickster", serif;
+    font-size: 114px;
+    line-height: 144px;
+}
+
+.info {
+    font-family: 'Space Mono', monospace;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -.5px;
+}
+
+.sub {
+    font-family: "trickster", serif;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+@media screen and (max-width: 700px) {
+    h1 {
+      font-size: 72px;
+      line-height: 96px;
+    }
+
+    .info {
+        font-size: 28px;
+    }
+  }
