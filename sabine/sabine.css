@@ -1,0 +1,143 @@
+body, h1, p {
+      margin: 0;
+}
+
+:root {
+    --lightblue: #D3FFFB;
+    --medblue: #00E5FF;
+    --medblue-hover: #66EFFF;
+    --darkblue: #275B89;
+    --black: #333;
+    --OTMissouri: 'OTMissouri', sans-serif;
+    --OTMiniature: 'OTMiniature', serif;
+    --PPNeueBit: 'PPNeueBit', monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: var(--lightblue);
+    align-items: center;
+    justify-content: start;
+    color: var(--black);
+    margin: 20px;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 120px;
+}
+
+main {
+    width: 100%;
+    max-width: 1276px;
+}
+
+div[role="img"] {
+    font-size: 28vw;
+    line-height: 20vw;
+    color: var(--medblue);
+    font-family: var(--OTMissouri);
+    position: relative;
+}
+
+h1 {
+    font-size: 7rem;
+    line-height: 7rem;
+    font-family: var(--OTMiniature);
+    margin-top: 2rem;
+}
+
+.desc {
+  color: var(--darkblue);
+  font-family: var(--OTMiniature);
+}
+
+p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.rsvp {
+  font-family: var(--PPNeueBit);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    padding: 12px 24px;
+    margin: 0;
+    text-decoration: none;
+    background: var(--medblue);
+    color: var(--black);
+    font-family: var(--OTMiniature);
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 12px;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover {
+  background: var(--medblue-hover);
+}
+
+img {
+  position: absolute;
+}
+
+img[src='img/babydj.svg'] {
+    width: 8vw;
+    right: 1vw;
+    top: -6vw;
+}
+
+img[src='img/beluga.svg'] {
+    width: 10vw;
+    left: 10vw;
+    top: -3vw;
+}
+
+img[src='img/smushycado.svg'] {
+    width: 8vw;
+    right: 18vw;
+    bottom: -5vw;
+}
+
+img[src='img/guitar.svg'] {
+    width: 10vw;
+    left: -1vw;
+    top: 38vw;
+}
+
+img[src='img/pom.svg'] {
+    width: 10vw;
+    right: -1vw;
+    top: 34vw;
+}
+
+
+@font-face {
+  font-family: 'OTMiniature';
+  src: url('../fonts/OTMiniature-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OTMissouri';
+  src: url('../fonts/OTMissouri-70mm.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPNeueBit';
+  src: url('../fonts/PPNeueBit-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
