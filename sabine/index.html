@@ -28,8 +28,61 @@
         <p class="desc">Hellman Hollow, Golden Gate Park, August 30th, 2025 @ 1pm</p>
         <div class="rsvp">
             <p>♬ Able to join us? ♥</p>
-            <button>Please RSVP</button>
+            <button id="showRSVP" onClick=toggleForm()>Please RSVP</button>
+            <form id="rsvp" class="hidden" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Required Web3Forms hidden inputs -->
+                <input type="hidden" name="access_key" value="345d78a5-af98-4846-996a-b6eae08a4f1c" />
+                <input type="hidden" name="subject" value="RSVP for Sabine's birthday party!" />
+                <input type="hidden" name="redirect" value="https://evanandkyle.com/sabine?success=true" />
+                <input type="hidden" name="botcheck" value="" />
+                <!-- Visible form fields -->
+                <div>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+
+                <div>
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+
+                <div>
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Please let us know who will be attending, and if you have any dietary restrictions."
+                        required
+                    ></textarea>
+                </div>
+                <button type="submit">Send RSVP</button>
+            </form>
+        <p id="confirmation" class="hidden">We can’t wait to see you!</p>
         </div>
-        <script src="" async defer></script>
+        <script>
+
+            const form = document.getElementById('rsvp');
+            const button = document.getElementById('showRSVP');
+            const confirmation = document.getElementById('confirmation');
+
+            function toggleForm(){
+                console.log("toggleForm")
+                rsvp.classList.remove("hidden");
+                button.classList.add("hidden");
+            }
+
+            function success(){
+                console.log('success')
+                confirmation.classList.remove('hidden');
+                button.classList.add('hidden');
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            if (params.get("success") === "true") {
+                success();
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        </script>
     </body>
 </html>
