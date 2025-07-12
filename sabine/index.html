@@ -27,7 +27,7 @@
         <h1>Sabine’s birthday</h1>
         <p class="desc">Hellman Hollow, Golden Gate Park, August 30th, 2025 @ 1pm</p>
         <div class="rsvp">
-            <p>♬ Able to join us? ♥</p>
+            <p id="invite">♬ Able to join us? ♥</p>
             <button id="showRSVP" onClick=toggleForm()>Please RSVP</button>
             <form id="rsvp" class="hidden" action="https://api.web3forms.com/submit" method="POST">
                 <!-- Required Web3Forms hidden inputs -->
@@ -65,6 +65,7 @@
             const form = document.getElementById('rsvp');
             const button = document.getElementById('showRSVP');
             const confirmation = document.getElementById('confirmation');
+            const invite = document.getElementById('invite');
 
             function toggleForm(){
                 console.log("toggleForm")
@@ -75,7 +76,9 @@
             function success(){
                 console.log('success')
                 confirmation.classList.remove('hidden');
+                invite.innerText = '☑ Thank you! ⛅'
                 button.classList.add('hidden');
+
             }
 
             const params = new URLSearchParams(window.location.search);

@@ -166,3 +166,18 @@ form {
   font-weight: bold;
   font-style: normal;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  img[src='img/pom.svg'] {
+      top: 56vw;
+    }
+
+  img[src='img/guitar.svg'] {
+    top: 58vw;
+  }
+}
